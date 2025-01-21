@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 svjetskih čuda</title>
+    <link rel="stylesheet" href="zad10.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="playwrite-in-title">7 svjetskih čuda</h1>
+
+    <div class="cards-wrapper">
+        <div class="card-container" onclick="showInfo('petra.jpg', 'Petra', 'Petra je arheološki grad u Jordanu, poznat kao Ružičasti grad zbog svoje boje.')">
+            <div class="card">
+                <div class="front">Petra</div>
+                <div class="back" style="background-image: url('petra.jpg');"></div>
+            </div>
+        </div>
+        <div class="card-container" onclick="showInfo('koloseum.jpg', 'Koloseum', 'Koloseum u Rimu je najveći amfiteatar ikad izgrađen.')">
+            <div class="card">
+                <div class="front">Koloseum</div>
+                <div class="back" style="background-image: url('koloseum.jpg');"></div>
+            </div>
+        </div>
+        <div class="card-container" onclick="showInfo('kineskizid.jpg', 'Kineski Zid', 'Kineski zid je najveći zid na svijetu, dug više od 21.000 kilometara.')">
+            <div class="card">
+                <div class="front">Kineski Zid</div>
+                <div class="back" style="background-image: url('kineskizid.jpg');"></div>
+            </div>
+        </div>
+        <div class="card-container" onclick="showInfo('Machupicchu.jpg', 'Machu Picchu', 'Machu Picchu je drevni grad Inka smješten u Peruu.')">
+            <div class="card">
+                <div class="front">Machu Picchu</div>
+                <div class="back" style="background-image: url('Machupicchu.jpg');"></div>
+            </div>
+        </div>
+        <div class="card-container" onclick="showInfo('tajmahal.jpg', 'Taj Mahal', 'Taj Mahal je mauzolej od bijelog mramora u Indiji.')">
+            <div class="card">
+                <div class="front">Taj Mahal</div>
+                <div class="back" style="background-image: url('tajmahal.jpg');"></div>
+            </div>
+        </div>
+        <div class="card-container" onclick="showInfo('christ.jpg', 'Krist Otkupitelj', 'Krist Otkupitelj je poznati kip u Rio de Janeiru, Brazil.')">
+            <div class="card">
+                <div class="front">Krist Otkupitelj</div>
+                <div class="back" style="background-image: url('christ.jpg');"></div>
+            </div>
+        </div>
+        <div class="card-container" onclick="showInfo('Chichenitza.jpg', 'Chichén Itzá', 'Chichén Itzá je drevni majanski grad na poluotoku Yucatán.')">
+            <div class="card">
+                <div class="front">Chichén Itzá</div>
+                <div class="back" style="background-image: url('Chichenitza.jpg');"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infoModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInfo()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div id="infoText"></div>
+        </div>
+    </div>
+
+    <script>
+        function showInfo(image, title, description) {
+            document.getElementById('modalImage').src = image;
+            document.getElementById('infoText').innerHTML = `<h2>${title}</h2><p>${description}</p>`;
+            document.getElementById('infoModal').style.display = 'block';
+        }
+
+        function closeInfo() {
+            document.getElementById('infoModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
